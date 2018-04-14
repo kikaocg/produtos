@@ -1,0 +1,65 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "produto": "Sabão",
+      "categoria": 1
+    },
+    {
+      "id": 2,
+      "produto": "Vassoura",
+      "categoria": 1
+    },
+    {
+      "id": 3,
+      "produto": "Biscoitos",
+      "categoria": 2
+    },
+    {
+      "id": 4,
+      "produto": "Macarrão",
+      "categoria": 2
+    },
+    {
+      "id": 5,
+      "produto": "Feijão verde",
+      "categoria": 2
+    },
+    {
+      "id": 6,
+      "produto": "Carne de sol",
+      "categoria": 2
+    },
+    {
+      "id": 7,
+      "produto": "iPhone",
+      "categoria": 3
+    }
+  ],
+  "categorias": [
+    {
+      "id": 1,
+      "categoria": "Limpeza"
+    },
+    {
+      "id": 2,
+      "categoria": "Alimentos"
+    },
+    {
+      "id": 3,
+      "categoria": "Eletrônicos"
+    },
+    {
+      "categoria": "Infantil",
+      "id": 4
+    },
+    {
+      "categoria": "Casa",
+      "id": 5
+    },
+    {
+      "categoria": "Vestuário",
+      "id": 6
+    }
+  ]
+}
