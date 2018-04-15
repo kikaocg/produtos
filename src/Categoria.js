@@ -1,30 +1,22 @@
 import React, {Component} from 'react'
-import axios from 'axios'
+import {Link} from 'react-router-dom'
 
 class Categoria extends Component {
+
     constructor (props) {
         super(props);
+        this.renderProduto = this.renderProduto.bind(this);
         this.state = {
             produtos: [],
-            categoria: []
+            categoria: {},
+            id: {}
         }
     }
 
     loadData(id) {
-        axios.get('http://localhost:3001/produtos?categoria='+id)
-            .then(res => {
-                    this.setState({
-                        produtos: res.data
-                    })
-                }
-            );
-        axios.get('http://localhost:3001/categorias/'+id)
-            .then(res => {
-                    this.setState({
-                        categoria: res.data
-                    })
-                }
-            )
+        this.setState({id});
+        this.props.loadProdutos(id);
+        this.props.loadCategoria(id);
     }
 
     componentDidMount() {
@@ -33,20 +25,33 @@ class Categoria extends Component {
     }
 
     componentWillReceiveProps(newProps) {
-        this.loadData(newProps.match.params.catId)
+        if (newProps.match.params.catId !== this.state.id) {
+            this.loadData(newProps.match.params.catId)
+        }
     }
 
-    static renderProduto(produto){
+    renderProduto(produto){
         return (
-            <p className="well" key={produto.id}>{produto.produto}</p>
+            <div className="well row" key={produto.id}>{produto.produto}
+                <button className='btn alert-danger pull-right ' onClick={ () => {
+                    this.props.removeProduto(produto)
+                        .then(res => this.loadData(this.props.match.params.catId))
+                }}>Excluir</button>
+                <div style={{marginRight:5}} className='btn btn-info pull-right'>
+                    <Link style={{listStyle: 'none', color: '#ffffff', textDecoration: 'none'}} to={'/produtos/editar/'+produto.id}>Editar</Link>
+                </div>
+            </div>
         )
     }
 
     render () {
         return (
             <div>
-                <h1>{this.state.categoria.categoria}</h1>
-                {this.state.produtos.map(Categoria.renderProduto)}
+                <h1>{this.props.categoria.categoria}</h1>
+                {this.props.produtos.length === 0 &&
+                    <p className='alert alert-info'>Nenhum produto disponível no momento</p>
+                }
+                {this.props.produtos.map(this.renderProduto)}
             </div>
         )
     }

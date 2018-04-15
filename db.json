@@ -1,65 +1,64 @@
 {
   "produtos": [
     {
-      "id": 1,
-      "produto": "Sabão",
-      "categoria": 1
-    },
-    {
-      "id": 2,
-      "produto": "Vassoura",
-      "categoria": 1
-    },
-    {
-      "id": 3,
-      "produto": "Biscoitos",
-      "categoria": 2
-    },
-    {
-      "id": 4,
-      "produto": "Macarrão",
-      "categoria": 2
-    },
-    {
       "id": 5,
       "produto": "Feijão verde",
       "categoria": 2
     },
     {
-      "id": 6,
-      "produto": "Carne de sol",
-      "categoria": 2
+      "produto": "DVD Galinha Pintadinha",
+      "categoria": "4",
+      "id": 10
     },
     {
-      "id": 7,
-      "produto": "iPhone",
-      "categoria": 3
+      "produto": "Liquidificador",
+      "categoria": "5",
+      "id": 11
+    },
+    {
+      "produto": "Bola ",
+      "categoria": "4",
+      "id": 13
+    },
+    {
+      "produto": "sabao",
+      "categoria": "1",
+      "id": 14
+    },
+    {
+      "produto": "tenis",
+      "categoria": "6",
+      "id": 15
     }
   ],
   "categorias": [
     {
       "id": 1,
-      "categoria": "Limpeza"
+      "categoria": "Limpeza "
     },
     {
       "id": 2,
-      "categoria": "Alimentos"
+      "categoria": "Alimentos "
     },
     {
       "id": 3,
       "categoria": "Eletrônicos"
     },
     {
-      "categoria": "Infantil",
-      "id": 4
+      "id": 4,
+      "categoria": "Infantil "
     },
     {
-      "categoria": "Casa",
-      "id": 5
+      "id": 5,
+      "categoria": "Casa "
     },
     {
-      "categoria": "Vestuário",
+      "categoria": "Esporte",
       "id": 6
+    },
+    {
+      "id": 7,
+      "categoria": "Viagens "
     }
   ]
 }
